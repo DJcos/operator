@@ -107,7 +107,7 @@ volumes, and a total capacity  of 16Ti. This configuration requires
   generates a Persistent Volume Claim (`PVC`) for each volume and evenly distributes
   volumes across each `minio` pod. The example above results in 4 volumes per `minio` pod.
 
-  If the cluster does not have sufficient Persistent Volume (`PV`) to bind to the
+  If the cluster does not have sufficient Persistent Volumes (`PV`) to bind to the
   generated `PVC`, Tenant creation hangs until the required `PV` exist.
 
 - The `--capacity` field indicates the total capacity of the cluster. MinIO determines the
@@ -115,7 +115,7 @@ volumes, and a total capacity  of 16Ti. This configuration requires
   total number of volumes in the server. The example above results in 1Ti requested
   capacity per volume.
 
-  If the cluster does not have sufficient Persistent Volume (`PV`) to satsify the
+  If the cluster does not have sufficient Persistent Volumes (`PV`) to satisfy the
   requested capacity, Tenant creation hangs until the required `PV` exist.
 
 - The `--namespace` field indicates the namespace onto which MinIO deploys the Tenant. 
@@ -171,7 +171,7 @@ to temporarily forward traffic from the local host to the MinIO Tenant.
 - The `minio` service provides access to MinIO Object Storage operations.
 
 - The `minio-tenant-1-console` service provides access to the MinIO Console. The 
-  MinIO Console supports administration of the MinIO Tenant.
+  MinIO Console supports GUI administration of the MinIO Tenant.
 
 # Expand a MinIO Tenant
 
