@@ -15,7 +15,7 @@ with the S3-API to simplify migration of applications onto MinIO Object Storage.
 
 # Architecture
 
-Each MinIO Tenant represents an independent MinIO Object Store service within
+Each MinIO Tenant represents an independent MinIO Object Store within
 the Kubernetes cluster. The following diagram describes the architecture of as
 MinIO Tenant deployed into Kubernetes:
 
@@ -165,8 +165,8 @@ update-ca-certificates
 For applications *external* to the Kubernetes cluster, you must configure 
 [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/) or a
 [Load Balancer](https://kubernetes.io/docs/concepts/services-networking/service/#loadbalancer) to
-expose the MinIO Tenant services. The `kubectl port-forward` command temporarily forwards traffic
-from the local host to the MinIO Tenant. 
+expose the MinIO Tenant services. Alternatively, you can use the `kubectl port-forward` command 
+to temporarily forward traffic from the local host to the MinIO Tenant. 
 
 - The `minio` service provides access to MinIO Object Storage operations.
 
@@ -257,9 +257,8 @@ You can estimate the number of PVC by multiplying the number of nodes in the
 Tenant by the number of drives per node. For example, a 4-node Tenant with
 4 drives per node requires 16 PVC and therefore 16 PV.
 
-MinIO *strongly recommends* using locally-attached storage for each PV for
-object storage performance. MinIO recommends the following CSI drivers for
-creating local PV:
+MinIO *strongly recommends* using the following CSI drivers for
+creating local PV to ensure best object storage performance:
 
 - [Local Persistent Volume](https://kubernetes.io/docs/concepts/storage/volumes/#local)
 - [OpenEBS Local PV](https://docs.openebs.io/docs/next/localpv.html)
